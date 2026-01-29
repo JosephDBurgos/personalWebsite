@@ -1,0 +1,399 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enable smooth scrolling for the entire page */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  /* Adjusts the offset for fixed navigation */
+  /* Updated gradient with dark minimalist colors */
+  background: linear-gradient(90deg, #1a1a1a, #2e2e2e, #1a1a1a);
+  background-size: 500% 500%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.group:hover .flip-card-front {
+  transform: rotateY(-180deg);
+}
+
+.group:hover .flip-card-back {
+  transform: rotateY(0deg);
+}
+
+body {
+  color: white;
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.cta {
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: linear-gradient(to right, #3b82f6, #4f44e5);
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(to right, #1a202c, #000000, #1a202c);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+/* Layering styles for sections */
+
+.layered-section {
+  background: linear-gradient(
+    45deg,
+    rgba(26, 32, 44, 0.9),
+    rgba(0, 0, 0, 0.9),
+    rgba(26, 32, 44, 0.9)
+  );
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Added advanced design enhancements */
+
+/* Subtle fade-in animation */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glassmorphism effect */
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Gradient border */
+
+.gradient-border {
+  border: 3px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: linear-gradient(to right, #4f46e5, #3b82f6);
+}
+
+/* Parallax background */
+
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  border-radius: 4px;
+}
+
+/* Dynamic shadows */
+
+.dynamic-shadow {
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.dynamic-shadow:hover {
+  box-shadow:
+    0 10px 15px rgba(0, 0, 0, 0.2),
+    0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Angled section divider */
+
+.angled-divider {
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  background: #1a202c;
+}
+
+/* Microinteraction for buttons */
+
+.button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Responsive typography */
+
+h1 {
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Neon Spark Animation */
+
+@keyframes randomMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(calc(100vw - 50px), calc(100vh - 50px));
+  }
+  50% {
+    transform: translate(calc(-50vw + 50px), calc(100vh - 50px));
+  }
+  75% {
+    transform: translate(calc(50vw - 50px), calc(-100vh + 50px));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.neon-streak {
+  position: absolute;
+  top: calc(100vh * var(--random-start-y));
+  /* Randomized starting position */
+  left: calc(100vw * var(--random-start-x));
+  /* Randomized starting position */
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(to bottom, #ff00ff, #ff0080);
+  border-radius: 10px;
+  box-shadow: 0 0 20px 5px #ff00ff;
+  animation: randomMove 8s infinite ease-in-out;
+  z-index: 0;
+  opacity: 0.8;
+}
+
+/* Add variations for multiple streaks */
+
+.neon-streak:nth-child(1) {
+  --random-start-x: 0.1;
+  --random-start-y: 0.1;
+  animation-delay: 0s;
+}
+
+.neon-streak:nth-child(2) {
+  --random-start-x: 0.5;
+  --random-start-y: 0.4;
+  animation-delay: 2s;
+}
+
+.neon-streak:nth-child(3) {
+  --random-start-x: 0.3;
+  --random-start-y: 0.7;
+  animation-delay: 4s;
+}
+
+.neon-streak:nth-child(4) {
+  --random-start-x: 0.8;
+  --random-start-y: 0.6;
+  animation-delay: 6s;
+}
+
+.neon-streak:nth-child(5) {
+  --random-start-x: 0.2;
+  --random-start-y: 0.9;
+  animation-delay: 8s;
+}
+
+/* Animated Snake */
+
+.animated-snake {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* Ensure it stays in the background */
+  overflow: hidden;
+}
+
+/* Northern Lights Fog Effect */
+
+@keyframes northernLights {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.northern-lights {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    120deg,
+    rgba(10, 10, 10, 0.8),
+    rgba(30, 30, 30, 0.6),
+    rgba(50, 50, 50, 0.7),
+    rgba(20, 20, 20, 0.6),
+    rgba(10, 10, 10, 0.8)
+  );
+  background-size: 200% 200%;
+  animation: northernLights 15s ease infinite;
+  z-index: -1;
+  /* Ensure it stays in the background */
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+nav {
+  background: linear-gradient(to right, #2a2a2a, #3e3e3e);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #b3b3b3;
+  /* Subtle hover effect */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
