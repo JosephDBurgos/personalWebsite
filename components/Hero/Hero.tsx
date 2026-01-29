@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 import HeroSection from "./HeroSection";
 
 export default function Hero() {
@@ -39,10 +40,12 @@ export default function Hero() {
           {/* Left Section: Logo and Name */}
           <div className="flex items-center z-50">
             <a href="#" className="flex items-center gap-2 z-50">
-              <img
+              <Image
                 src="/joeylogo.png"
                 alt="Logo"
-                className="w-15 h-12 rounded-full"
+                width={120} // Matches the width of w-15 (15 * 8px = 120px)
+                height={96} // Matches the height of h-12 (12 * 8px = 96px)
+                className="rounded-full"
               />
               <div className="flex flex-col leading-tight">
                 <h1 className="text-lg font-bold mb-0">Joseph Burgos</h1>

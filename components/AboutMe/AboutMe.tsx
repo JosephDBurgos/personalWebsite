@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutMe() {
   return (
@@ -8,10 +9,12 @@ export default function AboutMe() {
 
         {/* Photo */}
         <div className="relative flex flex-col items-center mb-8">
-          <img
+          <Image
             src="/joeylogo.png"
             alt="Logo"
-            className="w-36 h-36 rounded-full shadow-md"
+            width={288} // Matches the width of w-36 (36 * 8px = 288px)
+            height={288} // Matches the height of h-36 (36 * 8px = 288px)
+            className="rounded-full shadow-md"
           />
         </div>
 

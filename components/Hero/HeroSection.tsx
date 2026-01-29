@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -58,10 +59,12 @@ export default function HeroSection() {
         transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
         className="flex-1 flex justify-center items-center mt-6 md:mt-0"
       >
-        <img
-          src="/HeadShot.jpg"
+        <Image
+          src="/Headshot.jpg"
           alt="Joseph's headshot with gradient background"
-          className="w-48 h-64 md:w-80 md:h-96 lg:w-[24rem] lg:h-[30rem] object-cover rounded-lg shadow-lg border-4 border-gray-700"
+          width={384} // Matches the width of w-48 (48 * 8px = 384px)
+          height={512} // Matches the height of h-64 (64 * 8px = 512px)
+          className="object-cover rounded-lg shadow-lg border-4 border-gray-700"
         />
       </motion.div>
     </section>
